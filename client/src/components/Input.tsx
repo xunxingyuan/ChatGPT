@@ -103,7 +103,7 @@ export default function Input({
           {send}
         </button>
       </div>
-      <p
+      {/* <p
         className="hide"
         style={{
           fontSize: "12.6px",
@@ -115,7 +115,7 @@ export default function Input({
       >
         ChatGPT . Free Research Preview. Our goal is to make AI systems more
         natural and safe to interact with. Your feedback will help us improve.
-      </p>
+      </p> */}
       <p
         style={{
           fontSize: "13.5px",

@@ -101,7 +101,7 @@ export default function App() {
                   <div
                     className="inner_cont"
                     style={{
-                      height: "88%",
+                      height: "82%",
                       overflowY: "scroll",
                     }}
                   >
