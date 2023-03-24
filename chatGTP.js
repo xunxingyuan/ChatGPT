@@ -14,4 +14,15 @@ async function createCompletionChatGTP({ message }) {
   return response;
 }
 
-module.exports = { createCompletionChatGTP };
+//生成图片
+async function createImage({ message, limit = 2, size = "512x512", format = "b64_json" }) {
+  const response = await openai.createImage({
+    prompt: message,
+    n: limit,
+    size: size,
+    response_format: format
+  });
+  return response;
+}
+
+module.exports = { createCompletionChatGTP, createImage };
