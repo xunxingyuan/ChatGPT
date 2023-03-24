@@ -23,7 +23,7 @@ app.use(cors());
 
 app.use("/auth", authRouter);
 app.use("/chatgpt", chatRouter);
-app.use("/image", imageRouter)
+app.use("/other", imageRouter)
 
 app.listen(process.env.PORT || 8000, () => {
   console.log("Listeningserver on port : ", process.env.PORT || 8000);
