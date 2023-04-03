@@ -5,11 +5,17 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 async function createCompletionChatGTP({ message }) {
-  const response = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt: message,
-    max_tokens: 2048,
-    temperature: 0,
+  // const response = await openai.createCompletion({
+  //   model: "text-davinci-003",
+  //   prompt: message,
+  //   max_tokens: 2048,
+  //   temperature: 0,
+  // });
+  const response = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    message: message,
+    // max_tokens: 2048,
+    // temperature: 0,
   });
   return response;
 }

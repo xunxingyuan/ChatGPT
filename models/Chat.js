@@ -10,6 +10,10 @@ const chatSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        queryId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Query",
+        },
     },
     { timestamps: true }
 );
