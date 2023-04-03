@@ -11,7 +11,7 @@ async function createCompletionChatGTP({ message }) {
   //   max_tokens: 2048,
   //   temperature: 0,
   // });
-  const response = await openai.createCompletion({
+  const response = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
     message: message,
     // max_tokens: 2048,
