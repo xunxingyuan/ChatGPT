@@ -11,12 +11,13 @@ async function createCompletionChatGTP({ message }) {
   //   max_tokens: 2048,
   //   temperature: 0,
   // });
-  const response = await openai.createChatCompletion({
+  const response = await openai.createCompletion({
     model: "gpt-3.5-turbo",
     message: message,
     // max_tokens: 2048,
     // temperature: 0,
   });
+
   return response;
 }
 
