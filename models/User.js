@@ -23,11 +23,7 @@ const userSchema = new mongoose.Schema(
     apiKey: {
       type: String,
       required: true,
-    },
-    queries: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Query",
-    },
+    }
   },
   { timestamps: true }
 );

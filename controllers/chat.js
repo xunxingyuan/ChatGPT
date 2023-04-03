@@ -1,4 +1,5 @@
 const Query = require("../models/Query");
+const Chat = require("../models/Chat");
 const { createCompletionChatGTP } = require("../chatGTP");
 const { v4: uuid } = require("uuid");
 
@@ -41,3 +42,29 @@ exports.getAllChats = async (req, res) => {
     res.status(400).send({ success: false, message: err.message });
   }
 };
+
+exports.chatList = async (req, res) => {
+  try {
+    const query = await Chat.find({})
+    if (!query)
+      return res
+        .status(400)
+        .send({ success: false, message: "Query doesn't exist" });
+    res.send(query);
+  } catch (err) {
+    res.status(400).send({ success: false, message: err.message });
+  }
+}
+
+exports.addChat = async (req, res) => {
+  try {
+    const newQuery = new Query({
+      uid: req.userId,
+      name: req.chatName
+    });
+
+
+  } catch (err) {
+    res.status(400).send({ success: false, message: err.message });
+  }
+}
