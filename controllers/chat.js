@@ -33,7 +33,7 @@ exports.chat = async (req, res) => {
       }
     );
     res.send({
-      message: data.choices[0]?.content,
+      message: data.choices[0]?.text,
       _id: data.choices[0] ? tempId : undefined,
     });
   } catch (err) {
