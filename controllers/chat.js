@@ -14,20 +14,21 @@ exports.chat = async (req, res) => {
       _id: req.body.queryId
     })
     const messageData = texts.map((e) => {
-      return {
-        role: e.textBy === 1 ? 'user' : 'assistant',
-        content: e.message
-      }
+      // return {
+      //   role: e.textBy === 1 ? 'user' : 'assistant',
+      //   content: e.message
+      // }
+      return `${e.textBy === 1 ? 'Q:' : 'A:'}${e.message}`
     })
 
     const { data } = await createCompletionChatGTP({
-      message: messageData,
+      message: messageData.join('\n'),
     });
     await Query.updateOne(
       { _id: req.body.queryId },
       {
         $push: {
-          texts: { message: data.choices[0]?.content, textBy: 0 },
+          texts: { message: data.choices[0]?.text, textBy: 0 },
         },
       }
     );
