@@ -22,7 +22,7 @@ exports.chat = async (req, res) => {
     })
 
     const { data } = await createCompletionChatGTP({
-      message: messageData.join('\n'),
+      message: messageData.join('\n') + '\nA:',
     });
     await Query.updateOne(
       { _id: req.body.queryId },
